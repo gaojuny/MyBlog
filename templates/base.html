@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>{% block title %}base{% endblock %}</title>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+ rel="stylesheet">
+<link href="https://cdn.bootcss.com/bulma/0.3.0/css/bulma.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/blog.css') }}">
+{% block styles %} {% endblock %}
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+  <div class="nav-left">
+    <a class="nav-item is-brand" href="#">
+      <span class="icon is-lager">
+      	<i class="fa fa-user" aria-hidden="true"></i>
+      	<strong>高俊</strong>
+      </span>
+    </a>
+  </div>
+
+  <div class="nav-center">
+  </div>
+
+  <div id="nav-menu" class="nav-right nav-menu">
+      <a class="nav-item" href="https://github.com/gaojuny" target="_blank">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+      </a>
+
+  </div>
+</nav>
+</div>
+<section class="hero is-primary is-bold">
+	<div class="hero-body" style="min-height: 136px;">
+		<div class="container">
+			<h1 class="title" id="hello_title" style="display: inline-flex;">
+
+			</h1>
+
+		</div>
+	</div>
+	<div class="hero-foot">
+	    <div class="container">
+			<nav class="tabs is-boxed nav-left">
+		        <ul>
+		          <li class="is-active"><a>博客</a></li>
+		          <li><a>留言板</a></li>
+		          <li><a>动态</a></li>
+		          <li><a>学习资料</a></li>
+		          <li><a>链接</a></li>
+		        </ul>
+	    	</nav>
+	     </div>
+	</div>
+</section>
+<section class="section">
+{% block content %} {% endblock %}
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+      </p>
+      <p>
+        <a class="icon" href="https://github.com/jgthms/bulma">
+          <i class="fa fa-github"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/typed.js/1.1.4/typed.min.js"></script>
+<script>
+$(function() {
+	$("#hello_title").typed({
+    	strings: ["Hi!","Hello!","你好！"],
+    	typeSpeed: 300
+	});
+})
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
